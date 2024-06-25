@@ -1,0 +1,151 @@
+<!-- !Create a User registration form with necessary fields. And present the user information in tabular form. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Form</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .form-container {
+            width: 350px;
+            margin: 30px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .form-container h2 {
+            text-align: center;
+            color: #333;
+        }
+        .form-container label {
+            margin: 10px 0 5px;
+            display: block;
+            color: #333;
+        }
+        .form-container input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #2831a7;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #25569e;
+        }
+        .table-container {
+            width: 80%;
+            margin: 1px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .table-container h2 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Register</h2>
+    <form id="registrationForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+        
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required>
+        
+        <button type="button" onclick="registerUser()">Register</button>
+    </form>
+</div>
+
+<div class="table-container">
+    <h2>Registered Users</h2>
+    <table id="usersTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- User data will be inserted here -->
+        </tbody>
+    </table>
+</div>
+
+<script>
+    function registerUser() {
+        // Get form values
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var phone = document.getElementById('phone').value;
+        var address = document.getElementById('address').value;
+
+        // Create a new row and cells
+        var table = document.getElementById('usersTable').getElementsByTagName('tbody')[0];
+        var newRow = table.insertRow();
+        var nameCell = newRow.insertCell(0);
+        var emailCell = newRow.insertCell(1);
+        var phoneCell = newRow.insertCell(2);
+        var addressCell = newRow.insertCell(3);
+
+        // Insert the data into cells
+        nameCell.textContent = name;
+        emailCell.textContent = email;
+        phoneCell.textContent = phone;
+        addressCell.textContent = address;
+
+        // Clear the form
+        document.getElementById('registrationForm').reset();
+    }
+</script>
+
+</body>
+</html>
+

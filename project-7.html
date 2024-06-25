@@ -1,0 +1,49 @@
+<!-- !Using CSS design attractive 3D effect buttons. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Effect Button</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        .button-3d {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 20px;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+             background: linear-gradient(145deg, #2d5785, #2bceff);
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px #2d5785, 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .button-3d:hover {
+            box-shadow: 0 2px #2d5785, 0 8px 16px rgba(0, 0, 0, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .button-3d:active {
+            box-shadow: 0 0 #2d5785, 0 5px 10px rgba(0, 0, 0, 0.2);
+            transform: translateY(2px);
+        }
+    </style>
+</head>
+<body>
+
+<a href="#" class="button-3d">Click Me</a>
+
+</body>
+</html>

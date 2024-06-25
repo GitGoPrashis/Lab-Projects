@@ -1,0 +1,73 @@
+<!-- !Write a code for the position relative, absolute, fixed and make html page using CSS position. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Positioning</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            margin-top: 50px;
+            width: 80%;
+            max-width: 800px;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .relative-box {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            background-color: #f0f8ff;
+            margin-bottom: 20px;
+        }
+        .relative-box .absolute-box {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100px;
+            height: 100px;
+            background-color: #ffb6c1;
+        }
+        .fixed-box {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            width: 150px;
+            height: 50px;
+            background-color: #98fb98;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Relative Positioning</h2>
+    <p>This box uses <strong>position: relative</strong>. The pink box inside is positioned absolutely within the blue box.</p>
+    <div class="relative-box">
+        <div class="absolute-box"></div>
+    </div>
+
+    <h2>Fixed Positioning</h2>
+    <p>This green box uses <strong>position: fixed</strong>. It will stay in the bottom right corner of the viewport even when you scroll.</p>
+</div>
+
+<div class="fixed-box">
+    Fixed Box
+</div>
+
+</body>
+</html>
